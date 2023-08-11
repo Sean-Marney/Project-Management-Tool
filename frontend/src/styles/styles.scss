@@ -1,0 +1,23 @@
+@import "_variables.scss";
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-4;
+  margin: $spacing-10;
+  padding: $spacing-10;
+}
+
+.block-element {
+  display: block;
+  border: 1px solid;
+  padding: $spacing-8;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}

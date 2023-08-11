@@ -7,6 +7,7 @@ const getSubtasks = async (req, res) => {
 
     res.status(200).json({ subtasks });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -21,6 +22,7 @@ const getSubtaskById = async (req, res) => {
 
     res.status(200).json({ subtask });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -45,6 +47,7 @@ const createSubtask = async (req, res) => {
 
     res.status(201).json({ subtask });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -66,6 +69,7 @@ const updateSubtask = async (req, res) => {
 
     res.status(200).json({ subtask });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -78,10 +82,11 @@ const deleteSubtask = async (req, res) => {
       return res.status(404).json({ message: "Subtask not found" });
     }
 
-    await Subtask.findByIdAndRemove(req.params.subtaskId);
+    await subtask.deleteOne();
 
     res.status(200).json({ message: "Subtask deleted" });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };

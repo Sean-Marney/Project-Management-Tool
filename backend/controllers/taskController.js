@@ -7,6 +7,7 @@ const getTasks = async (req, res) => {
 
     res.status(200).json({ tasks });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -21,6 +22,7 @@ const getTaskById = async (req, res) => {
 
     res.status(200).json({ task });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -45,6 +47,7 @@ const createTask = async (req, res) => {
 
     res.status(201).json({ task });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -66,6 +69,7 @@ const updateTask = async (req, res) => {
 
     res.status(200).json({ task });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -78,10 +82,11 @@ const deleteTask = async (req, res) => {
       return res.status(404).json({ message: "Task not found" });
     }
 
-    await Task.findByIdAndRemove(req.params.taskId);
+    await task.deleteOne();
 
     res.status(200).json({ message: "Task deleted" });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };

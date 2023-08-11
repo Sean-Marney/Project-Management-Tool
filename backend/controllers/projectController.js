@@ -6,6 +6,7 @@ const getProjects = async (req, res) => {
 
     res.status(200).json({ projects });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -20,6 +21,7 @@ const getProjectById = async (req, res) => {
 
     res.status(200).json({ project });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -38,6 +40,7 @@ const createProject = async (req, res) => {
 
     res.status(201).json({ project });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -64,6 +67,7 @@ const updateProject = async (req, res) => {
 
     res.status(200).json({ project });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -81,10 +85,11 @@ const deleteProject = async (req, res) => {
       return res.status(401).json({ message: "Not authorised" });
     }
 
-    await Project.findByIdAndRemove(req.params.id);
+    await project.deleteOne();
 
     res.status(200).json({ message: "Project deleted" });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };

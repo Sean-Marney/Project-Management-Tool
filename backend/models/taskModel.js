@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Subtask = require("./subtaskModel");
 
 const TaskSchema = mongoose.Schema({
   name: {
@@ -35,6 +36,16 @@ const TaskSchema = mongoose.Schema({
     },
   ],
 });
+
+// Middleware to cascade delete related subtasks
+TaskSchema.pre(
+  "deleteOne",
+  { document: true, query: false },
+  async function (next) {
+    await Subtask.deleteMany({ task: this._id });
+    next();
+  }
+);
 
 const Task = mongoose.model("Task", TaskSchema);
 module.exports = Task;

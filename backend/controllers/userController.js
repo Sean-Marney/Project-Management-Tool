@@ -35,6 +35,7 @@ const registerUser = async (req, res) => {
       res.status(400).json({ message: "Invalid user data" });
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -53,16 +54,15 @@ const loginUser = async (req, res) => {
       res.status(400).json({ message: "Invalid credentials" });
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
 
 // Get current user details
 const getMe = async (req, res) => {
-  // Get user details via middleware auth (applied in routes)
-  const { _id, name, email } = await User.findById(req.user.id);
-
-  res.status(200).json({ id: _id, name, email });
+  // Get user via authMiddleware
+  res.status(200).json(req.user);
 };
 
 // Generate JWT
