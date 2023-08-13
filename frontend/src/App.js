@@ -9,6 +9,7 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register";
 import Project from "./components/Project";
 import CreateProject from "./pages/CreateProject";
+import NotFound from "./components/NotFound";
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
               <Route path=":id" element={<Project />} />
               <Route path="create" element={<CreateProject />} />
             </Route>
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </BrowserRouter>
