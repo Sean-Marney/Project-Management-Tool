@@ -1,17 +1,15 @@
-@import "../../styles/variables";
-
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: $spacing-4;
-  margin: $spacing-10;
-  padding: $spacing-10;
+  gap: 1rem;
+  margin: 2.5rem;
+  padding: 2.5rem;
 }
 
 .block-element {
   display: block;
   border: 1px solid;
-  padding: $spacing-8;
+  padding: 2rem;
 }
 
 .text-xl {
@@ -20,4 +18,4 @@
 
 .font-bold {
   font-weight: bold;
-}
+}/*# sourceMappingURL=styles.css.map */

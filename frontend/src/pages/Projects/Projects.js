@@ -1,4 +1,4 @@
-import "./Projects.scss";
+import "../../styles/styles.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -26,11 +26,11 @@ export default function Projects() {
     }
   };
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, [user, navigate]);
+  // useEffect(() => {
+  //   if (!user) {
+  //     navigate("/login");
+  //   }
+  // }, [user, navigate]);
 
   useEffect(() => {
     getProjects();
