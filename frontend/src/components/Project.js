@@ -5,9 +5,9 @@ import { useParams } from "react-router";
 import moment from "moment";
 
 export default function Project() {
-  const [project, setProject] = useState([]);
+  const [project, setProject] = useState(null);
+  const [date, setDate] = useState("");
   const { id } = useParams();
-
   const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
@@ -21,13 +21,22 @@ export default function Project() {
           Authorization: `Bearer ${user.token}`,
         },
       });
-      setProject(res.data.project);
+
+      if (res.data.project) {
+        setProject(res.data.project);
+        setDate(moment(res.data.project.createdAt).format("MMMM D YYYY"));
+      } else {
+        setProject(null);
+      }
     } catch (error) {
       console.log(error);
+      setProject(null);
     }
   };
 
-  const date = moment().format("MMMM D YYYY");
+  if (!project) {
+    return <div>Project not found.</div>;
+  }
 
   return (
     <div>

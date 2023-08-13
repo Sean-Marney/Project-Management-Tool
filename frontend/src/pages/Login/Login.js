@@ -1,4 +1,4 @@
-import "../../styles/Login.css";
+import "../../sass/index.css";
 import { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";

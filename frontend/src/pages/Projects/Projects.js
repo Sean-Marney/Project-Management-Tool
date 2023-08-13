@@ -1,4 +1,4 @@
-import "../../styles/styles.css";
+import "../../sass/index.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,8 +7,6 @@ import axios from "axios";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
-
-  const navigate = useNavigate();
 
   // Gets current user
   const { user } = useSelector((state) => state.auth);
@@ -26,12 +24,6 @@ export default function Projects() {
     }
   };
 
-  // useEffect(() => {
-  //   if (!user) {
-  //     navigate("/login");
-  //   }
-  // }, [user, navigate]);
-
   useEffect(() => {
     getProjects();
   }, []);
@@ -45,7 +37,7 @@ export default function Projects() {
       <section className="grid-layout">
         <div className="block-element">
           <Link to={"/projects/create"}>
-            <h2 className="text-xl font-bold">Create Project</h2>
+            <h2 className="create-project-text">Create Project</h2>
             <p>Create a new project here</p>
           </Link>
         </div>

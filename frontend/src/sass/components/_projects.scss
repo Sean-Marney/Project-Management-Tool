@@ -1,5 +1,3 @@
-@import "_variables.scss";
-
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,12 +10,13 @@
   display: block;
   border: 1px solid;
   padding: $spacing-8;
+  border-radius: 10px;
 }
 
-.text-xl {
-  font-size: 1.25rem;
+.block-element:hover {
+  background: rgb(211, 209, 209);
 }
 
-.font-bold {
-  font-weight: bold;
+.create-project-text {
+  color: rgb(181, 24, 24);
 }
