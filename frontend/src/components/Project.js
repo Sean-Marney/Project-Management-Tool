@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import moment from "moment";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Project() {
   const [project, setProject] = useState(null);
@@ -132,7 +132,9 @@ export default function Project() {
       <ul>
         {tasks.map((task) => (
           <li key={task._id}>
-            <p>{task.name}</p>
+            <Link to={`/projects/${project._id}/tasks/${task._id}`}>
+              <p>{task.name}</p>
+            </Link>
           </li>
         ))}
       </ul>

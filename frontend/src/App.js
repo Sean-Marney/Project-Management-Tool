@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import OutletGuard from "./components/OutletGuard";
-import { useNavigate } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import Projects from "./pages/Projects/Projects";
@@ -11,6 +10,7 @@ import Register from "./pages/Register";
 import Project from "./components/Project";
 import CreateProject from "./pages/CreateProject";
 import NotFound from "./components/NotFound";
+import Task from "./components/Task";
 
 export default function App() {
   return (
@@ -26,6 +26,7 @@ export default function App() {
               <Route index element={<Projects />} />
               <Route path=":id" element={<Project />} />
               <Route path="create" element={<CreateProject />} />
+              <Route path=":projectId/tasks/:taskId" element={<Task />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
