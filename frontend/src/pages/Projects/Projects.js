@@ -1,6 +1,6 @@
 import "../../sass/index.css";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Spinner from "../../components/Spinner";
 import axios from "axios";
@@ -35,16 +35,20 @@ export default function Projects() {
   return (
     <>
       <section className="grid-layout">
-        <div className="block-element">
-          <Link to={"/projects/create"}>
+        <div>
+          <Link className="block-element" to={"/projects/create"}>
             <h2 className="create-project-text">Create Project</h2>
             <p>Create a new project here</p>
           </Link>
         </div>
         {projects &&
           projects.map((project, index) => (
-            <div key={index} className="block-element">
-              <Link to={`/projects/${project._id}`} target="_blank">
+            <div key={index}>
+              <Link
+                className="block-element"
+                to={`/projects/${project._id}`}
+                target="_blank"
+              >
                 <h2 className="text-xl font-bold">{project.name}</h2>
                 <p>{project.description}</p>
               </Link>

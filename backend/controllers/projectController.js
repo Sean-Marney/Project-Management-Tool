@@ -94,10 +94,21 @@ const deleteProject = async (req, res) => {
   }
 };
 
+const addUserToProject = async (req, res) => {
+  const { email } = req.body;
+
+  try {
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: error });
+  }
+};
+
 module.exports = {
   getProjects,
   getProjectById,
   createProject,
   updateProject,
   deleteProject,
+  addUserToProject,
 };

@@ -39,6 +39,9 @@ img {
   border: 1px solid;
   padding: 2rem;
   border-radius: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .block-element:hover {
@@ -47,4 +50,70 @@ img {
 
 .create-project-text {
   color: rgb(181, 24, 24);
+}
+
+.header {
+  background-color: #2a4b8d;
+  color: #f7fafc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f7fafc;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link,
+.logout-btn {
+  margin-right: 20px;
+  color: #f7fafc;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out;
+}
+.nav-link .icon,
+.logout-btn .icon {
+  margin-right: 5px;
+}
+.nav-link:hover,
+.logout-btn:hover {
+  color: #cbd5e0;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: #f7fafc;
+  color: #1a202c;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.logout-btn:hover {
+  background-color: #cbd5e0;
+  color: #1a202c;
 }/*# sourceMappingURL=index.css.map */

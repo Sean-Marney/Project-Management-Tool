@@ -1,4 +1,4 @@
-import "./Header.scss";
+import "../../sass/index.css";
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container">
-        <Link to="/projects" className="logo-text">
+        <Link to="/" className="logo-text">
           Project Management
         </Link>
         <ul className="nav-links">
