@@ -38,10 +38,12 @@ export default function Task() {
       <h1>
         <p>{task.name}</p>
       </h1>
+      <h3>Description</h3>
       <p>{task.description}</p>
+      <h3>Status</h3>
       <p>{task.status}</p>
+      <h3>Priority</h3>
       <p>{task.priority}</p>
-      <p>{task.project}</p>
     </div>
   );
 }

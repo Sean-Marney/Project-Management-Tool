@@ -116,4 +116,27 @@ img {
 .logout-btn:hover {
   background-color: #cbd5e0;
   color: #1a202c;
+}
+
+.task-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+}
+.task-box a {
+  text-decoration: none;
+  color: #333;
+}
+.task-box a:hover {
+  color: #007bff;
+}
+
+.priority {
+  color: red;
 }/*# sourceMappingURL=index.css.map */

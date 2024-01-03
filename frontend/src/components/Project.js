@@ -1,3 +1,4 @@
+import "../sass/index.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -94,18 +95,6 @@ export default function Project() {
     }
   };
 
-  const addUserToProject = async (e) => {
-    e.preventDefault();
-
-    try {
-      const email = e.target.email.value;
-
-      await axios.patch(`http://localhost:4000/api/projects/${id}/add-user`);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   if (!project) {
     return <div>Project not found.</div>;
   }
@@ -114,30 +103,23 @@ export default function Project() {
     <div>
       <h1>{project.name}</h1>
       <p>{project.description}</p>
-      <label>Add User to Project</label>
-      <form onSubmit={addUserToProject}>
-        <input
-          className="input"
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter user email"
-        />
-        <button type="submit">✔</button>-
-      </form>
       <p>Project created {date}</p>
       <button onClick={() => deleteProject()}>Delete Project</button>
 
-      <h3>Tasks</h3>
-      <ul>
+      <h2>Tasks</h2>
+      <div className="task-container">
         {tasks.map((task) => (
-          <li key={task._id}>
+          <div key={task._id} className="task-box">
             <Link to={`/projects/${project._id}/tasks/${task._id}`}>
-              <p>{task.name}</p>
+              <h3>
+                <p>{task.name}</p>
+              </h3>
+              <p>{task.description}</p>
+              <p className="priority">{task.priority}</p>
             </Link>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

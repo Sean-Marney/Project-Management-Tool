@@ -1,0 +1,24 @@
+.task-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+
+  a {
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      color: #007bff;
+    }
+  }
+}
+
+.priority {
+  color: red;
+}
